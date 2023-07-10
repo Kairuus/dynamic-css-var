@@ -5,13 +5,13 @@ import { ContentComponent } from './pages/content/content.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
   },
   {
     path: 'content',
     component: ContentComponent,
-  }
+  },
 ];
 
 @NgModule({
