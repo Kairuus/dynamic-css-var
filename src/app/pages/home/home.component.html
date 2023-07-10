@@ -1,0 +1,32 @@
+<div class="back">
+  <div class="container">
+    <div class="title">
+      <h1>Dynamic <span id="cssSpan">CSS</span> Variables App</h1>
+    </div>
+    <div class="login">
+        <label>User ID <br>
+          <div class="input-div" id="userDiv" [ngStyle]="{ backgroundColor: userErrorMessage ? '#FAFA94' : ''}">
+            <input type="text" spellcheck="false" id="userInput" [ngStyle]="{ backgroundColor: userErrorMessage ? '#FAFA94' : ''}" (input)="checkForSpace(userId.value, pass.value)" #userId [(ngModel)]="userID">
+            <i class="fa-solid fa-triangle-exclamation warning-icon" [style.display]="userErrorMessage ? 'inline-block' : 'none' " [style.color]="userErrorMessage ? 'black' : '' ">
+            <p id="spaceWarning">{{userErrorMessage}}</p></i>
+
+          </div>
+        </label>
+        <label>Password <br>
+          <div class="input-div" id="passwordDiv" [ngStyle]="{ backgroundColor: passwordErrorMessage ? '#FAFA94' : ''}">
+            <input type="password" id="passwordInput" [ngStyle]="{ backgroundColor: passwordErrorMessage ? '#FAFA94' : ''}" (input)="checkForSpace(userId.value, pass.value)" #pass [(ngModel)]="password">
+            <i class="fa-solid fa-triangle-exclamation warning-icon" [style.display]="passwordErrorMessage ? 'inline-block' : 'none' " [style.color]="passwordErrorMessage ? 'black' : '' ">
+            <p id="spaceWarning">{{passwordErrorMessage}}</p></i>
+          </div>
+        </label>
+
+      <div class="buttons">
+        <button class="btn" (click)="clearAll()">Cancel</button>
+        <button class="btn" (click)="userValidation(userId.value, pass.value)">Login</button>
+      </div>
+      <div class="error-div">
+        <p>{{ invalidUserMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>
