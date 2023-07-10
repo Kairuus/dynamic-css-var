@@ -1,4 +1,4 @@
-Valid User id = testuser
+Valid User id = testuser            
 Valid password = mypassword
 
 
